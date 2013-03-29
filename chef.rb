@@ -31,7 +31,7 @@ class Chef
       SELECT COUNT(*) num_proteges
       FROM chefs
       WHERE mentor = ?
-    SQL
+    SQL  #get out of weird data format
   end
   
   def co_workers   
@@ -42,13 +42,12 @@ class Chef
       WHERE t1.chef_id = ?
       AND t2.chef_id != ? 
       AND ((t2.start >= t1.start AND t2.start <= t1.end) OR (t1.start >= t2.start AND t1.start <= t2.end))
-      GROUP BY t1.chef_id
     SQL
   end
   
   def reviews
     RestaurantsDatabase.execute(<<-SQL, id)
-      SELECT body, score, published, reviews.restaurant_id
+      SELECT reviews.*
       FROM cheftenure 
       JOIN reviews 
       ON cheftenure.restaurant_id = reviews.restaurant_id 
