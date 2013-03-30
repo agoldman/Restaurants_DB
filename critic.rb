@@ -50,7 +50,8 @@ class Critic
                WHERE reviews.critic_id = ?)  
     SQL
                         
-    unreviewed_data.map { |unreviewed_datum| Restaurant.new(unreviewed_datum) }
+    unreviewed_data.map { |unreviewed_datum| Restaurant.new(unreviewed_datum) } #mshopsin I believe this is the correct
+                                                                                #formatting
   end
 
 end
