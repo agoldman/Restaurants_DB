@@ -48,7 +48,7 @@ class Chef
          AND ((t2.start >= t1.start AND t2.start <= t1.end) OR (t1.start >= t2.start AND t1.start <= t2.end))
     SQL
                       
-    co_workers_data.map{|co_worker_datum| Chef.new(co_worker_datum)} 
+    co_workers_data.map{|co_worker_datum| Chef.new(co_worker_datum)} #mshopsin add space before and after curly braces
   end
   
   def reviews
