@@ -1,5 +1,5 @@
 require './restaurant_db.rb'
-
+#mshopsin nicely done, my solution looks very similar
 class Restaurant
   
   def self.find(id)    
